@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PagingDemo</string>
+    <string name="button_populate">生成数据</string>
+    <string name="button_clear">清除数据</string>
 </resources>
