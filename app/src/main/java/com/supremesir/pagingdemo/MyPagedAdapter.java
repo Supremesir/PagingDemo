@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class MyPagedAdapter extends PagedListAdapter<Student, MyPagedAdapter.MyViewHolder> {
 
 
-    protected MyPagedAdapter(@NonNull DiffUtil.ItemCallback<Student> diffCallback) {
+    public MyPagedAdapter() {
         super(new DiffUtil.ItemCallback<Student>() {
             @Override
             public boolean areItemsTheSame(@NonNull Student oldItem, @NonNull Student newItem) {
@@ -31,6 +31,7 @@ public class MyPagedAdapter extends PagedListAdapter<Student, MyPagedAdapter.MyV
             }
         });
     }
+
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
