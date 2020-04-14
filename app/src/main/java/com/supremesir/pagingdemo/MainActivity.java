@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     StudentDao studentDao;
     StudentDatabase studentDatabase;
-    MyPagedAdapter myPagedAdapter;
-    LiveData<PagedList<Student>> allStudentsLivePaged;
+    MyPagedAdapter myPagedAdapter;LiveData<PagedList<Student>> allStudentsLivePaged;
+
 
 
     @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         studentDao = studentDatabase.getStudentDao();
 
         // pageSize 设为2，可以看到快速滚动时，分页加载的效果
-        allStudentsLivePaged = new LivePagedListBuilder<>(studentDao.getAllStudent(), 2)
+        allStudentsLivePaged = new LivePagedListBuilder<>(studentDao.getAllStudent(), 20)
                 .build();
         allStudentsLivePaged.observe(this, new Observer<PagedList<Student>>() {
             @Override
