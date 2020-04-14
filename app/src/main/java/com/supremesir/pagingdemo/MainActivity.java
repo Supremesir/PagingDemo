@@ -1,5 +1,10 @@
 package com.supremesir.pagingdemo;
 
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -7,21 +12,19 @@ import androidx.paging.LivePagedListBuilder;
 import androidx.paging.PagedList;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.supremesir.pagingdemo.databinding.ActivityMainBinding;
 
+/**
+ * @author fang
+ */
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     StudentDao studentDao;
     StudentDatabase studentDatabase;
-    MyPagedAdapter myPagedAdapter;LiveData<PagedList<Student>> allStudentsLivePaged;
+    MyPagedAdapter myPagedAdapter;
+    LiveData<PagedList<Student>> allStudentsLivePaged;
 
 
 
@@ -91,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     static class InsertAsyncTask extends AsyncTask<Student, Void, Void> {
 
         StudentDao studentDao;
-        public InsertAsyncTask(StudentDao studentDao) {
+        InsertAsyncTask(StudentDao studentDao) {
             this.studentDao = studentDao;
         }
 
@@ -105,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     static class ClearAsyncTask extends AsyncTask<Void, Void, Void> {
 
         StudentDao studentDao;
-        public ClearAsyncTask(StudentDao studentDao) {
+        ClearAsyncTask(StudentDao studentDao) {
             this.studentDao = studentDao;
         }
 

@@ -17,19 +17,19 @@ public class Student {
     @ColumnInfo(name = "student_number")
     private int studentNumber;
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
-    public int getStudentNumber() {
+    int getStudentNumber() {
         return studentNumber;
     }
 
-    public void setStudentNumber(int studentNumber) {
+    void setStudentNumber(int studentNumber) {
         this.studentNumber = studentNumber;
     }
 }
