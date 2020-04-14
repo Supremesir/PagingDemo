@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     // 每次从数据源读取数据时，会回调该接口
                     @Override
                     public void onChanged(int position, int count) {
-                        Log.d("mylog", "onChanged:" + students);
+                        Log.d("myLog", "onChanged:" + students);
                     }
 
                     @Override
